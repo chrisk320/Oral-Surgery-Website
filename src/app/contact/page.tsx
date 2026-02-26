@@ -23,7 +23,7 @@ export default function ContactPage() {
           <span className="text-sm font-semibold text-[#2A9D8F] uppercase tracking-wider">
             Get in Touch
           </span>
-          <h1 className="text-4xl sm:text-5xl font-bold mt-3 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold mt-3 mb-4 text-white">
             Contact & Book Appointment
           </h1>
           <p className="text-white/75 max-w-2xl mx-auto text-lg">

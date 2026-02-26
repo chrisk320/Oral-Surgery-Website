@@ -144,6 +144,6 @@
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     font-weight: 700;
-    color: oklch(0.28 0.075 248); /* brand navy */
+    /* Color is set per-component via Tailwind classes (text-white on dark sections, text-[#1B3A5C] on light) */
   }
 }

@@ -65,7 +65,7 @@ export default function AboutPage() {
           <span className="text-sm font-semibold text-[#2A9D8F] uppercase tracking-wider">
             OC Implant Oral Surgery
           </span>
-          <h1 className="text-4xl sm:text-5xl font-bold mt-3 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold mt-3 mb-4 text-white">
             About Dr. Jone Kim
           </h1>
           <p className="text-white/75 max-w-2xl mx-auto text-lg">
