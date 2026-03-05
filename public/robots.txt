@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ocimplantoralsurgery.com
+
+# Sitemaps
+Sitemap: https://ocimplantoralsurgery.com/sitemap.xml

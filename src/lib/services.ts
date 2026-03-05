@@ -29,7 +29,7 @@ export const SERVICES: Service[] = [
     heroSubtitle:
       "The gold standard in permanent tooth replacement — look, feel, and function like natural teeth.",
     intro:
-      "Dental implants are titanium posts surgically placed into the jawbone to serve as artificial tooth roots. Over time they fuse with the bone through a process called osseointegration, creating a stable, permanent foundation for replacement teeth. Dr. Kim has placed thousands of implants using guided implant technology and 3D imaging to ensure precision, safety, and predictable outcomes.",
+      "Dental implants are titanium posts surgically placed into the jawbone to serve as artificial tooth roots. Over time they fuse with the bone through a process called osseointegration, creating a stable, permanent foundation for replacement teeth — one that never slips, never decays, and prevents the bone loss that commonly follows tooth loss. Studies show that 69% of adults ages 35–44 have lost at least one permanent tooth, and by age 74, 26% have lost all of them. With an overall success rate of about 95% and nearly 50 years of clinical research behind them, implants are frequently the best long-term solution. Dr. Kim has placed thousands of implants using 3D imaging and guided surgical planning to ensure precision and predictable outcomes.",
     candidates: [
       "Adults with one or more missing teeth",
       "Patients with sufficient jawbone density to support an implant",
@@ -104,6 +104,11 @@ export const SERVICES: Service[] = [
         answer:
           "Implants are cared for exactly like natural teeth — brush twice daily, floss, and attend regular dental checkups. Because implants can't decay, good gum health is the key to long-term success.",
       },
+      {
+        question: "Does Dr. Kim work with my regular dentist?",
+        answer:
+          "Yes — dental implants are a team effort. Dr. Kim handles the surgical component: placing the titanium implant post in the jawbone and monitoring osseointegration. Your restorative dentist (or a prosthodontist) then fabricates and places the final crown on the implant. Dr. Kim stays in close contact with your restorative team throughout the process to ensure a seamless outcome.",
+      },
     ],
     relatedSlugs: ["wisdom-teeth", "anesthesia"],
   },
@@ -118,7 +123,7 @@ export const SERVICES: Service[] = [
     heroSubtitle:
       "Expert removal of impacted or problematic wisdom teeth — comfortable, safe, and efficient.",
     intro:
-      "Wisdom teeth (third molars) are the last teeth to develop, typically appearing between ages 17 and 25. When there is not enough space in the jaw or they erupt at an improper angle, they become impacted and can cause pain, infection, crowding, and damage to adjacent teeth. Dr. Kim specializes in all levels of wisdom tooth impaction — from simple erupted extractions to deeply impacted surgical cases.",
+      "Wisdom teeth (third molars) are the last teeth to develop, typically appearing between ages 17 and 25. Modern diets and orthodontically aligned dental arches leave little room for these final molars, causing them to become impacted — blocked from erupting by overlying gum, bone, or adjacent teeth. Impacted wisdom teeth can cause pain, infection, crowding, and damage to adjacent teeth. Left untreated, the sac surrounding an impacted tooth can fill with fluid and form a cyst that hollows out the jaw and permanently damages surrounding bone and nerves. Studies estimate that about 85% of third molars will eventually need to be removed, and earlier removal — while roots are shorter and bone is less dense — means simpler surgery and faster healing. Dr. Kim specializes in all levels of impaction, from simple erupted extractions to complex deeply impacted surgical cases.",
     candidates: [
       "Patients experiencing pain or pressure at the back of the mouth",
       "Those with partially erupted or fully impacted wisdom teeth",
@@ -179,6 +184,11 @@ export const SERVICES: Service[] = [
         answer:
           "You have a choice. IV sedation is the most popular option — you will be deeply relaxed and have no memory of the procedure. Local anesthesia alone is also available for simpler cases.",
       },
+      {
+        question: "What happens if I wait and don't remove my wisdom teeth?",
+        answer:
+          "As wisdom teeth grow, their roots become longer and the surrounding bone becomes denser, making removal more difficult and complications more likely. If the sac around an impacted tooth becomes cystic, it can hollow out the jaw, permanently damage adjacent teeth and nerves, and in rare cases lead to tumor development requiring more extensive surgery. There are also no outward symptoms for many of these changes — damage can occur without you being aware of it. The AAOMS strongly recommends removal by early adulthood to prevent future problems and ensure optimal healing.",
+      },
     ],
     relatedSlugs: ["anesthesia", "dental-implants"],
   },
@@ -193,7 +203,7 @@ export const SERVICES: Service[] = [
     heroSubtitle:
       "Specialized anesthesia care so you can receive the treatment you need — anxiety-free.",
     intro:
-      "Dr. Kim holds a separate anesthesia permit and is a member of the American Dental Society of Anesthesiology. He personally administers all anesthesia for procedures performed at OC Implant Oral Surgery, ensuring the highest standard of safety and monitoring. Whether you have dental anxiety, a complex procedure, or simply prefer to be comfortable, we have an anesthesia option for you.",
+      "Dr. Kim holds a separate anesthesia permit and is a member of the American Dental Society of Anesthesiology. He personally administers all anesthesia for procedures performed at OC Implant Oral Surgery. As a result of his extensive surgical training, Dr. Kim is qualified to identify and assess sources of pain and anxiety, administer local anesthesia and all forms of sedation and general anesthesia, manage airways including endotracheal intubation, establish and maintain intravenous lines, and manage complications and emergencies that may arise during anesthesia. Whether you have dental anxiety, a complex procedure, or simply prefer to be comfortable, we have an anesthesia option for you — and patients routinely describe their experience as comfortable and surprisingly pleasant.",
     candidates: [
       "Patients with dental anxiety or phobia",
       "Those undergoing multiple procedures in a single visit",
@@ -241,7 +251,7 @@ export const SERVICES: Service[] = [
       {
         question: "What anesthesia options are available?",
         answer:
-          "We offer four options: (1) Local anesthesia only — numbs the surgical area; (2) Nitrous oxide (laughing gas) — mild relaxation; (3) Oral sedation — a pill taken before the procedure; (4) IV sedation/general anesthesia — deepest level of sedation, you will have no memory of the procedure.",
+          "We offer four options: (1) Local anesthesia only — numbs the surgical area, you remain fully awake; (2) Nitrous oxide–oxygen (laughing gas) — mild relaxation and anxiety relief with rapid recovery; (3) Oral sedation — a pill taken before the procedure for moderate relaxation; (4) IV sedation/general anesthesia — the deepest level, administered intravenously so you drift off within seconds and have no memory of the procedure. Dr. Kim will recommend the most appropriate option based on your procedure, medical history, and comfort preferences.",
       },
       {
         question: "Is IV sedation safe?",
@@ -315,7 +325,7 @@ export const SERVICES: Service[] = [
       {
         question: "What causes TMJ disorders?",
         answer:
-          "TMJ disorders can result from jaw injuries, arthritis, teeth grinding (bruxism), misaligned bite, or excessive stress causing jaw clenching. Often a combination of factors is involved.",
+          "TMJ disorders can stem from several sources: arthritis (from injury or nighttime grinding) causes joint-level pain; disc displacement or dislocation between the jawbone and socket produces clicking, popping, and limited opening; disc perforation creates a grating sound with movement; and rheumatoid arthritis or severe trauma can cause the joint surfaces to fuse, preventing jaw movement entirely. Separately, stress-induced jaw clenching causes painful muscle spasms (myofascial pain) that closely mimic joint-based TMD — which is why accurate diagnosis is essential before treatment begins.",
       },
       {
         question: "Can TMJ disorders be cured without surgery?",
@@ -346,7 +356,7 @@ export const SERVICES: Service[] = [
     heroSubtitle:
       "Early detection saves lives — comprehensive oral cancer evaluation by a board-certified oral surgeon.",
     intro:
-      "Oral cancer affects the lips, tongue, cheeks, floor of the mouth, hard and soft palate, sinuses, and throat. When detected early, the 5-year survival rate is significantly higher. Dr. Kim performs thorough oral cancer screenings, evaluates suspicious lesions, performs biopsies, and coordinates with oncology teams when necessary. Regular screening is recommended for everyone, especially those with risk factors.",
+      "Oral cancer affects the lips, tongue, cheeks, floor of the mouth, hard and soft palate, sinuses, and throat. Because the mouth is an area where changes can be easily seen, oral cancer can often be detected early — and early detection dramatically improves the chance of cure. Studies show the death rate from oral cancer is about four times higher for cigarette smokers than non-smokers; heavy alcohol use and smokeless tobacco are additional significant risk factors. Dr. Kim performs thorough oral cancer screenings, evaluates suspicious lesions, performs biopsies, and coordinates with oncology teams when necessary. Regular self-exams and annual professional screenings are the most powerful tools available for early detection.",
     candidates: [
       "Adults aged 40 and older (routine screening recommended)",
       "Tobacco users — cigarettes, cigars, pipes, chewing tobacco",
@@ -399,7 +409,12 @@ export const SERVICES: Service[] = [
       {
         question: "What are the warning signs of oral cancer?",
         answer:
-          "Key warning signs include: a sore or irritation that doesn't heal within 2 weeks, red or white patches, a lump or thickening, difficulty chewing, swallowing, or moving the jaw, and persistent hoarseness. Any of these should be evaluated promptly.",
+          "Key warning signs include: leukoplakia (white patches on the oral tissues), erythroplakia (red patches), erythroleukoplakia (mixed red and white patches), a sore that fails to heal and bleeds easily, an abnormal lump or thickening of oral tissues, chronic sore throat or hoarseness, difficulty chewing or swallowing, and a mass or lump in the neck. Your mouth is one of your body's most important early warning systems — don't ignore any suspicious lesion that persists beyond two weeks.",
+      },
+      {
+        question: "How do I perform an oral cancer self-exam?",
+        answer:
+          "Dr. Kim recommends a monthly self-exam using a bright light and mirror: (1) Remove any dentures. (2) Look and feel inside your lips and the front of your gums. (3) Tilt your head back and inspect and feel the roof of your mouth. (4) Pull your cheek out to see its inner surface and the back of your gums. (5) Pull out your tongue and inspect all of its surfaces — top, bottom, and sides. (6) Feel for lumps or enlarged lymph nodes on both sides of your neck, including under the lower jaw. If you notice anything unusual, contact Dr. Kim for a prompt evaluation.",
       },
       {
         question: "Is oral cancer treatable?",
@@ -420,7 +435,7 @@ export const SERVICES: Service[] = [
     heroSubtitle:
       "Comprehensive facial trauma care — from emergency stabilization to complete reconstruction.",
     intro:
-      "As a fellowship-trained oral and maxillofacial surgeon, Dr. Kim is uniquely qualified to treat all types of facial trauma. His advanced training in orthognathic and facial reconstructive surgery, combined with his expertise in the bones and soft tissues of the face, makes him the specialist of choice for injuries ranging from simple lacerations to complex jaw fractures and mid-face injuries.",
+      "Maxillofacial injuries — also called facial trauma — encompass any injury to the mouth, face, and jaw. Most are caused by sports mishaps, motor vehicle accidents, workplace accidents, or falls. If someone is unconscious, disoriented, nauseated, or dizzy after a facial injury, call 911 immediately and do not attempt to move them. If those symptoms are absent but the injury is severe or uncertain, go directly to the nearest emergency room. As a fellowship-trained oral and maxillofacial surgeon, Dr. Kim is uniquely qualified to treat all types of facial trauma — from simple lacerations requiring precise repair to complex jaw fractures and mid-face injuries requiring surgical reconstruction.",
     candidates: [
       "Patients with jaw fractures from accidents, sports injuries, or falls",
       "Individuals with facial lacerations requiring specialist repair",
@@ -479,6 +494,11 @@ export const SERVICES: Service[] = [
         question: "Will the titanium plates need to be removed?",
         answer:
           "In most adults, titanium plates and screws remain in place permanently with no issues. Removal is only necessary if a plate becomes painful, infected, or palpable under the skin — which is uncommon.",
+      },
+      {
+        question: "How can I prevent facial injuries during sports?",
+        answer:
+          "Dr. Kim advocates for seat belts, protective helmets, and custom-fitted mouth guards for anyone who participates in athletic activities at any level. Mouth guards are recommended for football, baseball, ice hockey, wrestling, boxing, lacrosse, field hockey, soccer, basketball, rugby, and other contact sports. Helmets are essential for biking, skiing, snowboarding, and horseback riding. Custom-fabricated mouth guards from a dentist offer superior fit, comfort, and protection compared to over-the-counter 'boil and bite' models — and are more likely to actually be worn. A good mouth guard should fit securely, be lightweight, allow normal breathing and speech, and cover both the upper teeth and gums.",
       },
     ],
     relatedSlugs: ["oral-cancer", "anesthesia"],
