@@ -57,60 +57,367 @@ const FORMS = [
 
 // ─── Pre & Post-Op Instructions ──────────────────────────────────────────────
 
-const INSTRUCTIONS = [
+type InstructionSection = { heading: string; items: string[] };
+type Instruction = { id: string; title: string; sections: InstructionSection[] };
+
+const INSTRUCTIONS: Instruction[] = [
   {
     id: "preo-sedation",
-    title: "Pre-Operative: IV Sedation & General Anesthesia",
-    items: [
-      "Have nothing to eat or drink for 8 hours before surgery. Clear liquids (water, apple juice, black coffee) are permitted up to 4 hours prior.",
-      "Arrange a responsible adult driver who will stay with you for the first few hours after surgery — this is required for your release.",
-      "Wear comfortable, loose-fitting clothing with short sleeves to allow easy IV access.",
-      "Remove nail polish from at least one finger and remove contact lenses before arriving.",
-      "Take only the medications specifically approved by Dr. Kim on the morning of surgery, with a small sip of water.",
-      "Arrive 15 minutes before your scheduled appointment time to complete check-in.",
-      "Leave jewelry and valuables at home.",
+    title: "Pre-Operative: General Anesthesia & IV Sedation",
+    sections: [
+      {
+        heading: "Before Surgery",
+        items: [
+          "Do not eat or drink (including water) 6 hours prior to surgery.",
+          "Arrange transportation with a responsible adult who will bring you to and from the office. This person must remain in the reception room during surgery.",
+          "A responsible adult must take care of you for 6 hours after surgery.",
+          "Do not drive or operate heavy machinery for 24 hours after surgery, or at any time while taking prescribed narcotic pain relievers.",
+          "Wear short sleeves, comfortable and loose-fitting clothing on the day of surgery.",
+          "Do not wear heavy make-up, jewelry, lipstick, nail polish, or contact lenses on the day of surgery. You may bring glasses — they will be removed before surgery.",
+          "Urinate 30–60 minutes before surgery.",
+          "Patients under age 18 must be accompanied by a parent or legal guardian.",
+          "Brush and floss your teeth on the morning of surgery. Rinsing your mouth is okay.",
+          "If you need to take prophylaxis antibiotics for a medical condition, take them with just a sip of water as instructed by your physician or Dr. Kim.",
+          "If you are taking birth control pills or shots, be advised that antibiotics will lower their effectiveness.",
+          "If you take any medications, please consult with Dr. Kim prior to surgery.",
+        ],
+      },
     ],
   },
   {
-    id: "posto-wisdom",
-    title: "Post-Operative: Wisdom Teeth Extraction",
-    items: [
-      "Bite firmly on the gauze placed over the extraction sites for 45 minutes. Replace with fresh gauze if bleeding continues.",
-      "Apply ice packs to your cheeks — 20 minutes on, 20 minutes off — for the first 24 hours to reduce swelling.",
-      "Avoid straws, spitting, rinsing vigorously, and smoking for at least 72 hours. Suction can dislodge the blood clot and cause dry socket.",
-      "Eat only soft foods (yogurt, soup, mashed potatoes, applesauce) for the first 3–5 days. Gradually return to normal foods as healing progresses.",
-      "Begin gently rinsing with warm salt water (¼ tsp salt in 8 oz water) starting 24 hours after surgery, after every meal.",
-      "Swelling typically peaks at 48–72 hours and then gradually subsides over the following days.",
-      "Take all prescribed medications exactly as directed. Do not wait for pain to become severe before taking pain medication.",
-      "Sleep with your head elevated on extra pillows for the first 2–3 nights.",
-      "Call our office if you experience worsening pain after day 3, foul taste, or dry socket symptoms.",
+    id: "posto-anesthesia",
+    title: "Post-Operative: General Anesthesia & IV Sedation",
+    sections: [
+      {
+        heading: "DO NOT",
+        items: [
+          "Do not drive, exercise, ride a bike, skateboard, play sports, or operate heavy machinery for 24 hours after general anesthesia or IV sedation.",
+          "Do not drive or operate heavy machinery if you are taking prescribed narcotic pain relievers after surgery.",
+        ],
+      },
+      {
+        heading: "Diet",
+        items: [
+          "A parent, legal guardian, or responsible person must take care of you for 24 hours after surgery.",
+          "For the first 24 hours, consume only clear liquids (7-up, water, apple juice) and soft foods (ice cream, Jello, pudding, fruit or protein shakes). Do not chew any food while your tongue or lip(s) is numb — you may bite and injure yourself.",
+          "After 24 hours you can eat soft foods (scrambled eggs, mashed potatoes, pasta, soft boneless chicken or beef), then gradually progress to solid food as tolerated.",
+          "Do not eat or drink anything hot in temperature for 1 week. Warm coffee, tea, or soup is fine.",
+          "Avoid crunchy and chewy food (nuts, popcorn, candies, hard crackers, chips) — they may get stuck in the surgical site and lead to infection.",
+          "If you are diabetic or have a special diet, follow your diet guidelines and take your medications as instructed by your physician.",
+          "Try to eat and drink a normal amount to avoid weakness or dizziness. Insufficient hydration may cause fever and delay healing.",
+        ],
+      },
+      {
+        heading: "Nausea",
+        items: [
+          "Medications used during general anesthesia or IV sedation can cause nausea. The most common cause after surgery is prescribed narcotic pain relievers (Vicodin, Codeine, Darvocet). You may also feel nauseated if you swallow large amounts of blood.",
+          "If nauseated, try drinking clear liquids (7-up, plain water) in small amounts.",
+          "If nausea continues, call Dr. Kim — an anti-nausea medication can be prescribed over the phone to your pharmacy.",
+        ],
+      },
+      {
+        heading: "Discomfort",
+        items: [
+          "Local anesthesia will usually last 2–4 hours, but numbness can last 6–12 hours.",
+          "Start with over-the-counter pain relievers such as Tylenol or Advil (if not allergic). These are usually adequate for mild to moderate discomfort.",
+          "If pain is not relieved by over-the-counter medication, take the prescription pain reliever from Dr. Kim. Do not drive or operate heavy machinery while taking prescription pain relievers.",
+          "If you experience any reaction to medication, stop it immediately and call Dr. Kim.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "posto-extraction",
+    title: "Post-Operative: Tooth Extraction",
+    sections: [
+      {
+        heading: "DO NOT",
+        items: [
+          "Do not rinse for 24 hours after surgery.",
+          "Do not drink through a straw for 2–3 days after surgery.",
+          "Do not brush the surgical site for 2–3 days. Brush everywhere except the surgical site and the teeth immediately adjacent to it.",
+          "Do not drink alcohol or smoke for 48 hours after surgery.",
+          "Do not eat or drink hot food or beverages for 1 week. Warm or room-temperature food and drinks are fine.",
+          "Do not chew hard or crunchy food (popcorn, nuts, candies, crackers, chips) for 1–2 weeks.",
+          "Do not disturb the surgical site with your tongue, finger, or any object.",
+          "Do not swim, surf, or engage in any underwater activity for 1 week.",
+        ],
+      },
+      {
+        heading: "Bleeding",
+        items: [
+          "Place gentle pressure over the surgical site with the gauzes provided. Extra gauze is available at any pharmacy.",
+          "Change gauze every 45–60 minutes or sooner as needed. Continue until bleeding stops. Some bleeding for several hours is normal.",
+          "After 45–60 minutes, check the gauze. If there is only a small amount of redness or a mostly pinkish/orange color, bleeding has stopped. Slight intermittent bleeding for a few days is not unusual — replace the gauze and apply pressure if it occurs.",
+          "Never sleep with gauze in your mouth.",
+        ],
+      },
+      {
+        heading: "Discomfort",
+        items: [
+          "Local anesthesia will usually last 2–4 hours, but numbness can last 6–12 hours.",
+          "Start with over-the-counter pain relievers such as Tylenol or Advil (if not allergic). These are usually adequate for mild to moderate discomfort.",
+          "If pain is not controlled by over-the-counter medication, take the prescription pain reliever from Dr. Kim. Do not drive or operate heavy machinery while taking prescription pain relievers.",
+          "If you experience any medication reaction, stop it immediately and call Dr. Kim.",
+        ],
+      },
+      {
+        heading: "Antibiotics",
+        items: [
+          "If prescribed antibiotics, take them exactly as directed through the full course. Antibiotics help prevent infection.",
+          "If you experience reactions (hives, swelling, or diarrhea), stop the medication immediately and call Dr. Kim.",
+          "If you are taking birth control pills or shots, antibiotics will lower their effectiveness.",
+        ],
+      },
+      {
+        heading: "Sutures",
+        items: [
+          "If sutures are used, Dr. Kim will typically use dissolvable sutures that dissolve in 1–2 weeks. On rare occasions non-dissolvable sutures are used and will be removed in 1–2 weeks.",
+        ],
+      },
+      {
+        heading: "Swelling & Bruising",
+        items: [
+          "Some swelling and/or bruising is expected and varies among patients.",
+          "Swelling typically peaks at 48–72 hours and takes 7–10 days to fully resolve.",
+          "Apply an ice pack for 20 minutes on and off for the first 24 hours. Keeping your head slightly elevated with pillows during sleep also helps.",
+          "After the first 24 hours, apply a heat pad or warm compress for the next 48 hours to further reduce swelling and bruising.",
+        ],
+      },
+      {
+        heading: "Diet",
+        items: [
+          "Do not chew on the surgical side. If surgery was on both sides, chew on the side with less surgery.",
+          "For the first 12–24 hours, eat cold liquid-soft foods (ice cream, protein shakes, pudding, Jello) that require no chewing. Do not chew until all numbness in the tongue and lips has resolved.",
+          "After 12–24 hours and once numbness is gone, you may eat soft foods (scrambled eggs, mashed potatoes, warm soup, pasta, soft boneless chicken or meat).",
+          "Do not eat or drink anything hot in temperature for 1 week. Warm food and drinks are fine.",
+          "Avoid crunchy and chewy food (nuts, popcorn, candies, crackers, chips) — they may get stuck in the surgical site and cause infection.",
+          "If you are diabetic or have a special diet, follow your guidelines as instructed by your physician.",
+          "Try to maintain adequate food and fluid intake to avoid weakness or dizziness. Insufficient hydration may cause fever and delay healing.",
+        ],
+      },
+      {
+        heading: "Oral Hygiene & Care",
+        items: [
+          "Good oral hygiene is essential to prevent infection.",
+          "Brush your teeth gently but avoid the surgical site and adjacent teeth for 2–3 days.",
+          "Starting the day after surgery, rinse gently with warm salt water (1 teaspoon in 1 quart of water) or plain water after every meal. After rinsing, open your mouth and let the water fall out — do not spit, as this can cause dry socket.",
+          "Avoid alcohol-based mouthwashes (such as Listerine or Scope) for 3–4 days — they can irritate the surgical site.",
+        ],
+      },
+      {
+        heading: "Temporary Prosthesis or Denture",
+        items: [
+          "If instructed by Dr. Kim, you may use a temporary prosthesis or denture after surgery. If it causes pain or bleeding, remove it and schedule an office evaluation.",
+          "Do not sleep with the temporary prosthesis or denture unless instructed by Dr. Kim.",
+          "Clean the temporary prosthesis or denture daily with a toothbrush or cleaning solution.",
+        ],
+      },
+      {
+        heading: "Dry Socket",
+        items: [
+          "Dry socket is an inflammatory condition caused by the loss of the blood clot. It can occur if you spit, use a straw, rinse within 24 hours of surgery, or consume hot food — all of which can dislodge or prevent proper clot formation.",
+          "Dry socket typically appears 3–5 days after surgery. Pain may radiate to the back of the lower jaw, the ear, or the side of the head.",
+          "If you experience these symptoms, call our office. Dr. Kim or an assistant will place a medicated dressing in the socket to significantly reduce the discomfort.",
+        ],
+      },
     ],
   },
   {
     id: "posto-implant",
     title: "Post-Operative: Dental Implant Surgery",
-    items: [
-      "Apply ice packs to the cheek over the implant site — 20 minutes on, 20 minutes off — for the first 24 hours.",
-      "Stick to soft foods (eggs, pasta, fish, yogurt, mashed vegetables) for the first week. Avoid hard, crunchy, or chewy foods that could stress the implant site.",
-      "Do not prod the surgical site with your tongue, fingers, or any objects.",
-      "Avoid smoking for the entire healing period — tobacco significantly impairs osseointegration and greatly increases implant failure risk.",
-      "Begin gentle warm salt-water rinses 24 hours after surgery. Continue twice daily for the first two weeks.",
-      "Mild swelling and bruising are normal and typically resolve within 3–5 days.",
-      "The full osseointegration process takes 3–6 months. Attend all scheduled follow-up visits so Dr. Kim can monitor healing.",
-      "If a temporary restoration was placed, avoid biting directly on it with hard foods.",
+    sections: [
+      {
+        heading: "DO NOT",
+        items: [
+          "Do not rinse for 24 hours after surgery.",
+          "Do not brush the surgical site for 1 week. Brush everywhere except the surgical site and the teeth immediately adjacent to it.",
+          "Do not drink alcohol or smoke for 48 hours after surgery.",
+          "Do not eat or drink hot food or beverages for 1 week. Warm or room-temperature food and drinks are fine.",
+          "Do not chew hard, crunchy, or chewy food (popcorn, nuts, candies, crackers, chips, etc.).",
+          "Do not disturb the surgical site with your tongue, finger, or any object. If the site is close to your lip, do not pull your lip out — pressure can open the site and delay healing or cause infection.",
+          "Do not swim, surf, or engage in any underwater activity for 1 week.",
+        ],
+      },
+      {
+        heading: "Bleeding",
+        items: [
+          "Place gentle pressure over the surgical site with the gauzes provided. Extra gauze is available at any pharmacy.",
+          "Change gauze every 45–60 minutes or sooner as needed. Continue until bleeding stops.",
+          "After 45–60 minutes, check the gauze. If there is only a small amount of redness or a mostly pinkish/orange color, bleeding has stopped. Slight intermittent bleeding for a few days is not unusual — replace the gauze and apply pressure if it occurs.",
+          "Never sleep with gauze in your mouth.",
+        ],
+      },
+      {
+        heading: "Discomfort",
+        items: [
+          "Local anesthesia will usually last 2–4 hours, but numbness can last 6–12 hours.",
+          "Start with over-the-counter pain relievers such as Tylenol or Advil (if not allergic). These are usually adequate for mild to moderate discomfort.",
+          "If pain is not controlled by over-the-counter medication, take the prescription pain reliever from Dr. Kim. Do not drive or operate heavy machinery while taking prescription pain relievers.",
+          "If you experience any medication reaction, stop it immediately and call Dr. Kim.",
+        ],
+      },
+      {
+        heading: "Antibiotics",
+        items: [
+          "If prescribed antibiotics, take them exactly as directed through the full course to help prevent infection.",
+          "If you experience reactions (hives, swelling, or diarrhea), stop the medication immediately and call Dr. Kim.",
+          "If you are taking birth control pills or shots, antibiotics will lower their effectiveness.",
+        ],
+      },
+      {
+        heading: "Sutures",
+        items: [
+          "If sutures are used, Dr. Kim will typically use dissolvable sutures that dissolve in 1–2 weeks. Occasionally non-dissolvable sutures are used and will be removed in 1–2 weeks.",
+        ],
+      },
+      {
+        heading: "Swelling & Bruising",
+        items: [
+          "Some swelling and/or bruising is expected and varies among patients.",
+          "Swelling typically peaks at 48–72 hours and takes 7–10 days to fully resolve.",
+          "Apply an ice pack for 20 minutes on and off for the first 24 hours. Keep your head slightly elevated with pillows during sleep.",
+          "After the first 24 hours, apply a heat pad or warm compress for the next 48 hours to further reduce swelling and bruising.",
+        ],
+      },
+      {
+        heading: "Diet",
+        items: [
+          "If you had general anesthesia, also follow the post-op general anesthesia instructions.",
+          "Do not chew on the surgical side. If surgery was on both sides, chew on the side with less surgery.",
+          "For the first 12–24 hours, eat cold liquid-soft foods (ice cream, protein shakes, pudding, Jello) that require no chewing. Do not chew until all numbness in the tongue and lips has resolved.",
+          "After 12–24 hours and once numbness is gone, you may eat soft foods (scrambled eggs, mashed potatoes, warm soup, pasta, soft boneless chicken or beef).",
+          "Do not eat or drink anything hot in temperature for 1 week. Warm food and drinks are fine.",
+          "Avoid crunchy and chewy food (nuts, popcorn, candies, crackers, chips) — they may get stuck in the surgical site and cause infection.",
+          "If you are diabetic or have a special diet, follow your guidelines as instructed by your physician.",
+          "Try to maintain adequate food and fluid intake to avoid weakness or dizziness. Insufficient hydration may cause fever and delay healing.",
+        ],
+      },
+      {
+        heading: "Oral Hygiene & Care",
+        items: [
+          "Good oral hygiene is essential to prevent infection.",
+          "Brush your teeth gently but avoid the surgical site and adjacent teeth for 1 week.",
+          "Starting the day after surgery, rinse gently with warm salt water (1 teaspoon in 1 quart of water) or plain water after every meal. After rinsing, open your mouth and let the water fall out. Do not rinse on the first day of surgery. Most patients rinse 6–8 times a day.",
+          "Avoid alcohol-based mouthwashes (such as Listerine or Scope) for 3–4 days — they can irritate the surgical site.",
+        ],
+      },
+      {
+        heading: "Temporary Prosthesis or Denture",
+        items: [
+          "If instructed by Dr. Kim, you may use a temporary prosthesis or denture after surgery. If it causes pain or bleeding, remove it and schedule an office evaluation.",
+          "Do not sleep with the temporary prosthesis or denture unless instructed by Dr. Kim.",
+          "Clean the temporary prosthesis or denture daily with a toothbrush or cleaning solution.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "posto-bonegraft",
+    title: "Post-Operative: Bone Graft Surgery",
+    sections: [
+      {
+        heading: "DO NOT",
+        items: [
+          "Do not rinse for 24 hours after surgery.",
+          "Do not drink through a straw for 2–3 days after surgery.",
+          "Do not brush the surgical site for 2–3 days. Brush everywhere except the surgical site and the teeth immediately adjacent to it.",
+          "Do not drink alcohol or smoke for 48 hours after surgery.",
+          "Do not eat or drink hot food or beverages for 1 week. Warm or room-temperature food and drinks are fine.",
+          "Do not chew hard or crunchy food (popcorn, nuts, candies, crackers, chips) for 1–2 weeks.",
+          "Do not disturb the surgical site with your tongue, finger, or any object.",
+          "Do not swim, surf, or engage in any underwater activity for 1 week.",
+        ],
+      },
+      {
+        heading: "Bleeding",
+        items: [
+          "Place gentle pressure over the surgical site with the gauzes provided. Extra gauze is available at any pharmacy.",
+          "Change gauze every 45–60 minutes or sooner as needed. Continue until bleeding stops.",
+          "After 45–60 minutes, check the gauze. If there is only a small amount of redness or a mostly pinkish/orange color, bleeding has stopped. Slight intermittent bleeding for a few days is not unusual — replace the gauze and apply pressure if it occurs.",
+          "Never sleep with gauze in your mouth.",
+        ],
+      },
+      {
+        heading: "Discomfort",
+        items: [
+          "Local anesthesia will usually last 2–4 hours, but numbness can last 6–12 hours.",
+          "Start with over-the-counter pain relievers such as Tylenol or Advil (if not allergic). These are usually adequate for mild to moderate discomfort.",
+          "If pain is not controlled by over-the-counter medication, take the prescription pain reliever from Dr. Kim. Do not drive or operate heavy machinery while taking prescription pain relievers.",
+          "If you experience any medication reaction, stop it immediately and call Dr. Kim.",
+        ],
+      },
+      {
+        heading: "Antibiotics",
+        items: [
+          "If prescribed antibiotics, take them exactly as directed through the full course to help prevent infection.",
+          "If you experience reactions (hives, swelling, or diarrhea), stop the medication immediately and call Dr. Kim.",
+          "If you are taking birth control pills or shots, antibiotics will lower their effectiveness.",
+        ],
+      },
+      {
+        heading: "Sutures",
+        items: [
+          "If sutures are used, Dr. Kim will typically use dissolvable sutures that dissolve in 1–2 weeks. Occasionally non-dissolvable sutures are used and will be removed in 1–2 weeks.",
+        ],
+      },
+      {
+        heading: "Swelling & Bruising",
+        items: [
+          "Some swelling and/or bruising is expected and varies among patients.",
+          "Swelling typically peaks at 48–72 hours and takes 7–10 days to fully resolve.",
+          "Apply an ice pack for 20 minutes on and off for the first 24 hours. Keep your head slightly elevated with pillows during sleep.",
+          "After the first 24 hours, apply a heat pad or warm compress for the next 48 hours to further reduce swelling and bruising.",
+        ],
+      },
+      {
+        heading: "Diet",
+        items: [
+          "If you had general anesthesia, also follow the post-op general anesthesia instructions.",
+          "Do not chew on the surgical side. If surgery was on both sides, chew on the side with less surgery.",
+          "For the first 12–24 hours, eat cold liquid-soft foods (ice cream, protein shakes, pudding, Jello) that require no chewing. Do not chew until all numbness in the tongue and lips has resolved.",
+          "After 12–24 hours and once numbness is gone, you may eat soft foods (scrambled eggs, mashed potatoes, warm soup, pasta, soft boneless chicken or meat).",
+          "Do not eat or drink anything hot in temperature for 1 week. Warm food and drinks are fine.",
+          "Avoid crunchy and chewy food (nuts, popcorn, candies, crackers, chips) — they may get stuck in the surgical site and cause infection.",
+          "If you are diabetic or have a special diet, follow your guidelines as instructed by your physician.",
+          "Try to maintain adequate food and fluid intake to avoid weakness or dizziness. Insufficient hydration may cause fever and delay healing.",
+        ],
+      },
+      {
+        heading: "Oral Hygiene & Care",
+        items: [
+          "Good oral hygiene is essential to prevent infection.",
+          "Brush your teeth gently but avoid the surgical site and adjacent teeth for 2–3 days.",
+          "Starting the day after surgery, rinse gently with warm salt water (1 teaspoon in 1 quart of water) or plain water after every meal. After rinsing, open your mouth and let the water fall out — do not spit, as this can cause dry socket.",
+          "Avoid alcohol-based mouthwashes (such as Listerine or Scope) for 3–4 days — they can irritate the surgical site.",
+        ],
+      },
+      {
+        heading: "Temporary Prosthesis or Denture",
+        items: [
+          "If instructed by Dr. Kim, you may use a temporary prosthesis or denture after surgery. If it causes pain or bleeding, remove it and schedule an office evaluation.",
+          "Do not sleep with the temporary prosthesis or denture unless instructed by Dr. Kim.",
+          "Clean the temporary prosthesis or denture daily with a toothbrush or cleaning solution.",
+        ],
+      },
     ],
   },
   {
     id: "posto-facial",
     title: "Post-Operative: Facial Injury & Jaw Surgery",
-    items: [
-      "Follow all dietary restrictions exactly as prescribed — a liquid or pureed diet is essential to protect fracture repairs during bone healing.",
-      "Sleep with your head elevated on 2–3 pillows for the first week to reduce swelling.",
-      "Take all prescribed antibiotics until the full course is complete, even if you feel better. Take pain medications as directed.",
-      "Avoid contact sports, heavy lifting, and strenuous activity for a minimum of 6 weeks.",
-      "Do not blow your nose forcefully if you had treatment involving the sinuses or orbital floor.",
-      "Keep all follow-up appointments without exception — bone healing and hardware position must be monitored closely.",
-      "Call our office or go to the ER if you experience fever over 101°F, increasing redness/swelling, discharge, or numbness not previously noted.",
+    sections: [
+      {
+        heading: "Recovery Guidelines",
+        items: [
+          "Follow all dietary restrictions exactly as prescribed — a liquid or pureed diet is essential to protect fracture repairs during bone healing.",
+          "Sleep with your head elevated on 2–3 pillows for the first week to reduce swelling.",
+          "Take all prescribed antibiotics until the full course is complete, even if you feel better. Take pain medications as directed.",
+          "Avoid contact sports, heavy lifting, and strenuous activity for a minimum of 6 weeks.",
+          "Do not blow your nose forcefully if you had treatment involving the sinuses or orbital floor.",
+          "Keep all follow-up appointments without exception — bone healing and hardware position must be monitored closely.",
+          "Call our office or go to the ER if you experience fever over 101°F, increasing redness or swelling, discharge, or numbness not previously noted.",
+        ],
+      },
     ],
   },
 ];
@@ -298,16 +605,25 @@ export default function PatientResourcesPage() {
                   {section.title}
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-5">
-                  <ul className="space-y-2">
-                    {section.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-[#2A9D8F] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-[#334155]/80 leading-relaxed">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  {section.sections.map((sub, si) => (
+                    <div key={si} className={si > 0 ? "mt-5" : ""}>
+                      {section.sections.length > 1 && (
+                        <p className="text-xs font-bold text-[#1B3A5C] uppercase tracking-wider mb-2">
+                          {sub.heading}
+                        </p>
+                      )}
+                      <ul className="space-y-2">
+                        {sub.items.map((item, i) => (
+                          <li key={i} className="flex items-start gap-2.5">
+                            <CheckCircle2 className="w-4 h-4 text-[#2A9D8F] flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-[#334155]/80 leading-relaxed">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </AccordionContent>
               </AccordionItem>
             ))}

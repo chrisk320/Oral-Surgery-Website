@@ -17,7 +17,7 @@ const schema = {
       telephone: "+17145290043",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "— update with exact street address —",
+        streetAddress: "1770 E. Lambert Road, Suite 115",
         addressLocality: "Brea",
         addressRegion: "CA",
         postalCode: "92821",
@@ -25,8 +25,8 @@ const schema = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        addressLocality: "Brea",
-        addressRegion: "CA",
+        latitude: 33.9164,
+        longitude: -117.9082,
       },
       medicalSpecialty: "Oral and Maxillofacial Surgery",
       description:

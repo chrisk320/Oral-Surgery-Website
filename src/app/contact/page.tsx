@@ -80,10 +80,11 @@ export default function ContactPage() {
                   <MapPin className="w-4 h-4 text-[#2A9D8F] flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium">OC Implant Oral Surgery</p>
-                    <p className="text-[#334155]/70">Brea, CA</p>
+                    <p className="text-[#334155]/70">1770 E. Lambert Rd., Suite 115</p>
+                    <p className="text-[#334155]/70">Brea, CA 92821</p>
                     <div className="flex gap-3 mt-2 text-xs">
                       <a
-                        href="https://maps.google.com/?q=Brea,CA"
+                        href="https://maps.google.com/?q=1770+E+Lambert+Rd+Suite+115,+Brea,+CA+92821"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#2A9D8F] hover:underline"
@@ -91,7 +92,7 @@ export default function ContactPage() {
                         Google Maps ↗
                       </a>
                       <a
-                        href="https://maps.apple.com/?q=Brea,CA"
+                        href="https://maps.apple.com/?address=1770+E+Lambert+Rd+Suite+115,Brea,CA,92821"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#2A9D8F] hover:underline"
@@ -104,14 +105,19 @@ export default function ContactPage() {
 
                 <div className="flex items-center gap-3 text-sm text-[#334155]">
                   <Phone className="w-4 h-4 text-[#2A9D8F] flex-shrink-0" />
-                  <a href="tel:7145290043" className="hover:text-[#2A9D8F] transition-colors">
-                    (714) 529-0043
-                  </a>
+                  <div>
+                    <a href="tel:7145290043" className="hover:text-[#2A9D8F] transition-colors block">
+                      (714) 529-0043
+                    </a>
+                    <span className="text-[#334155]/60 text-xs">Fax: (714) 529-1019</span>
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-3 text-sm text-[#334155]">
                   <Mail className="w-4 h-4 text-[#2A9D8F] flex-shrink-0" />
-                  <span className="text-[#334155]/70">Use the form to email us</span>
+                  <a href="mailto:info@ocimplantoralsurgery.com" className="hover:text-[#2A9D8F] transition-colors text-[#334155]/80">
+                    info@ocimplantoralsurgery.com
+                  </a>
                 </div>
 
                 <div className="pt-2 border-t border-gray-100">
@@ -133,14 +139,14 @@ export default function ContactPage() {
               {/* Map embed */}
               <div className="rounded-2xl overflow-hidden border border-gray-100 h-48">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105843.97788823438!2d-117.97755!3d33.91668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd65dd3e78b9f%3A0xb0f1bad49c1f0a6a!2sBrea%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000"
+                  src="https://maps.google.com/maps?q=1770+E+Lambert+Rd+Suite+115,+Brea,+CA+92821&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="OC Implant Oral Surgery — Brea, CA"
+                  title="OC Implant Oral Surgery — 1770 E. Lambert Rd., Suite 115, Brea, CA"
                 />
               </div>
             </div>

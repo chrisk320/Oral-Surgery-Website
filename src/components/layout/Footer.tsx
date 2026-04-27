@@ -52,9 +52,9 @@ export default function Footer() {
             <div className="flex items-start gap-2.5 text-sm text-white/80">
               <MapPin className="w-4 h-4 text-[#2A9D8F] flex-shrink-0 mt-0.5" />
               <span>
-                Brea, CA
+                1770 E. Lambert Rd., Suite 115
                 <br />
-                Orange County
+                Brea, CA 92821
               </span>
             </div>
             <a
@@ -130,7 +130,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="w-full h-48 rounded-lg overflow-hidden opacity-80">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105843.97788823438!2d-117.97755!3d33.91668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd65dd3e78b9f%3A0xb0f1bad49c1f0a6a!2sBrea%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000"
+              src="https://maps.google.com/maps?q=1770+E+Lambert+Rd+Suite+115,+Brea,+CA+92821&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
