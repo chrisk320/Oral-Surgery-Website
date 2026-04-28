@@ -21,9 +21,8 @@ const schema = z.object({
   email: z.string().email("Please enter a valid email address"),
   phone: z
     .string()
-    .regex(/^\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/, "Please enter a valid phone number")
-    .optional()
-    .or(z.literal("")),
+    .min(1, "Please enter your phone number")
+    .regex(/^\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/, "Please enter a valid phone number"),
   service: z.string().optional(),
   message: z.string().min(10, "Please enter a brief message (at least 10 characters)"),
 });
@@ -43,6 +42,7 @@ const SERVICES = [
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const {
     register,
@@ -55,12 +55,20 @@ export default function ContactForm() {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    // TODO: wire to Resend / Formspree in production
-    // For now, simulate a submit delay
-    await new Promise((r) => setTimeout(r, 1000));
-    console.log("Form submission:", data);
-    setIsSubmitting(false);
-    setSubmitted(true);
+    setSubmitError(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Send failed");
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -128,7 +136,7 @@ export default function ContactForm() {
         {/* Phone */}
         <div>
           <label className="text-sm font-medium text-[#334155] block mb-1.5">
-            Phone Number
+            Phone Number <span className="text-red-500">*</span>
           </label>
           <Input
             {...register("phone")}
@@ -176,6 +184,13 @@ export default function ContactForm() {
           <p className="text-xs text-red-500 mt-1">{errors.message.message}</p>
         )}
       </div>
+
+      {submitError && (
+        <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+          Something went wrong. Please try again or call us at{" "}
+          <a href="tel:7145290043" className="underline">(714) 529-0043</a>.
+        </p>
+      )}
 
       <Button
         type="submit"
