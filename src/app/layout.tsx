@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ocimplantoralsurgery.com"),
   title: {
     default: "OC Implant Oral Surgery | Dr. Jone Kim | Brea, CA",
     template: "%s | OC Implant Oral Surgery",
@@ -35,9 +36,12 @@ export const metadata: Metadata = {
     description:
       "Expert oral surgery in Brea, CA — dental implants, wisdom teeth, sedation, TMJ, and more. Board-certified surgeon Dr. Jone Kim.",
   },
+  // TODO(public-launch): flip back to index/follow once real photos, gallery
+  // images (with consent), and PDF forms are in place. Kept noindex while the
+  // site is on the temporary Vercel URL with placeholder content.
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 
